@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP</title>
+    <style>
+        body{background-color: teal;color: #fff;padding: 100px 300px;text-align: center;}
+    </style>
+</head>
+<body>
+    
+    <h2>Forgot Password</h2>
+    <form action="/checkOtp" method="post">
+        <table border="1" style="margin:0 auto;" cellpadding="4px">
+            <tr>
+                <td>Enter OTP</td>
+                <td><input type="text" name="otp"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" name="submit" value="Submit"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>

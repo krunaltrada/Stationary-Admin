@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <style>
+        body{background-color: teal;color: #fff;padding: 20px 300px;text-align: center;}
+    </style>
+</head>
+<body>
+    
+    <h2>Posts</h2>
+    <form action="/postCreate" method="post" style="margin-bottom:40px;">
+        <table border="1" style="margin:0 auto;" cellpadding="4px">
+            <tr>
+                <td>
+                    <textarea name="postData" cols="50" rows="4"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="Post"></td>
+            </tr>
+        </table>
+    </form>
+
+    <ul style="text-align: left;">
+        <% for(var posts of postData){ %>
+            <li style="margin-bottom: 10px;"><%= posts.postData %> <br>
+                <form action="/commentCreate" method="post">
+                    <input type="hidden" name="postId" value="<%= posts._id %>">
+                    <input type="text" name="comment">
+                    <input type="submit" name="submit" value="Comment">
+                </form>
+                <ul>
+                    <% for(var comment of commentData){
+                        if(posts.id == comment.postid){ %>
+                        <li><%= comment.commentData %></li>
+                    <% }} %>
+                </ul>
+            </li>
+        <% } %>
+    </ul>
+    
+</body>
+</html>

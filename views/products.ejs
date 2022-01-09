@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+    <style>
+        body {
+            background-color: teal;
+            color: #fff;
+            padding: 20px 300px;
+            text-align: center;
+        }
+    </style>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <h2>Products</h2>
+    <form action="/categoryCreate" method="post" style="margin-bottom:40px;">
+        <table border="1" style="margin:0 auto;" cellpadding="4px">
+            <tr>
+                <td><input type="text" name="category"></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="submit" value="Add Category"></td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- <ul style="text-align: left;">
+        <% for(var posts of postData){ %>
+            <li style="margin-bottom: 10px;"><%= posts.postData %> <br>
+                <form action="/commentCreate" method="post">
+                    <input type="hidden" name="postId" value="<%= posts._id %>">
+                    <input type="text" name="comment">
+                    <input type="submit" name="submit" value="Comment">
+                </form>
+                <ul>
+                    <% for(var comment of commentData){
+                        if(posts.id == comment.postid){ %>
+                        <li><%= comment.commentData %></li>
+                    <% }} %>
+                </ul>
+            </li>
+        <% } %>
+    </ul> -->
+
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#c1">Men</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#c2">Women</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#c3">Electronics</a>
+        </li>
+    </ul>
+    <div class="tab-content clearfix">
+        <div class="tab-pane active" id="c1">
+            <h3>Content's background color is the same for the tab.</h3>
+        </div>
+        <div class="tab-pane" id="c2">
+            <h3>We use the class nav-pills instead of nav-tabs.</h3>
+        </div>
+        <div class="tab-pane" id="c3">
+            <h3>We applied clearfix to the tab-content to rid.</h3>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
